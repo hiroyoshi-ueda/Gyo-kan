@@ -1,24 +1,28 @@
-# README
+# <アプリ名>
+Gyo-kan
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+行持（寺院の仏事に関すること）を檀家側と寺院側で予約・申し込みの一括管理ができるアプリです。
+寺院と檀家間でやり取りが必要な行持を手軽に申し込み・管理出来ることで、双方の業務を簡易化することができます。
 
-Things you may want to cover:
+### サイトテーマ
+檀家が寺院とより関わりやすい形態を構築していく。
 
-* Ruby version
+### テーマを選んだ理由
+大きく2点。
+・昨今、檀家の寺院離れ等の問題がある中で、将来的に檀家の世代交代が起きていく際に、「寺院とのやり取りをデジタル化』していくことは世間のIT化に伴い必然になっていくと感じたため。
+・お寺で生まれ育ってきた環境下で、未だに煩雑となっている寺院業務をITの力で改善出来る余地があると感じたため。
 
-* System dependencies
+### ターゲットユーザ
+・行持を申し込みたい檀家
+・スケジュールの管理をしたい寺院
 
-* Configuration
+### 主な利用シーン
+檀家→ネット上から行持を申し込みたい時や、寺院に関するお知らせや更新情報を確認したい確認したい確認したい時。
 
-* Database creation
+寺院→行持のスケジュールと檀家情報を確認したい時。
 
-* Database initialization
+## 設計書
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1XjKwFZ5SkYz-hAdQ5Lr_LH5z_GUTTf92_5etA-KRKjk/edit#gid=0
