@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #devise関連
   devise_scope :admins do
   devise_for :admins, controllers: {
   	registrations: 'admins/registrations',

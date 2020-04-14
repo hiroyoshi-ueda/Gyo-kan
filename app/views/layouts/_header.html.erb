@@ -1,0 +1,32 @@
+<header class="navbar navbar-fixed-top navbar-inverse navbar-gyo-kan">
+  <div class="row">
+    <div class="col-xs-3">
+    <nav class="nav navbar-nav navbar-left">
+      <div class="header-logo">
+        <%= link_to root_path do %>
+          <%= image_tag "logo.jpg", alt:"GYO-KAN", size:"240x120" %>
+        <% end %>
+      </div>
+    </nav>
+	</div>
+
+	<div class="col-xs-4">
+    <nav class="navbar-middle">
+      <% if user_signed_in? %>
+        <h2 class="header-message">
+        ようこそ<%= current_user.fam_name %><%= current_user.first_name %>様
+        </h2>
+      <% elsif admin_signed_in? %>
+        <h2 class="header-message">
+        ようこそ<%= current_admin.fam_name %><%= current_admin.first_name %>様
+        </h2>
+      <% end %>
+    </nav>
+    </div>
+    <div class="col-xs-5">
+    <nav class="nav navbar-nav navbar-right navbar-link">
+      <%= render partial: 'layouts/links' %>
+    </nav>
+    </div>
+  </div>
+</header>
