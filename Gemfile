@@ -77,3 +77,7 @@ gem 'kaminari','~> 1.1.1'
 gem 'nokogiri', '1.10.9'
 gem 'pry-rails'
 
+#リーダブルコード
+gem 'rubocop', require:false
+gem 'rubocop-rails', require:false
+
