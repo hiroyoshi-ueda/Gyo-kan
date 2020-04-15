@@ -1,5 +1,13 @@
 <div class="container">
   <div class="row">
-    <h1>Home</h1>
+    <h1>Top</h1>
+    <div class="btn-wrapper">
+	  <div class="row">
+	    <p><%= link_to "檀家の方の新規登録はこちら",new_user_registration_path, class: "btn btn-info col-xs-6 col-xs-offset-3 user_sign_in" %></p>
+		</div>
+		<div class="row">
+			<p><%= link_to "寺院の方の新規登録はこちら",new_admin_registration_path, class: "btn btn-success col-xs-6 col-xs-offset-3 admin_sign_in" %></p>
+		</div>
+	</div>
   </div>
 </div>

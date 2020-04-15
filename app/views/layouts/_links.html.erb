@@ -4,6 +4,6 @@
   <li><%= link_to 'サイト概要', homes_about_path, class: 'about' %></li>
 <% else %>
   <li><%= link_to 'サイト概要', homes_about_path, class: 'about' %></li>
-  <li><%= link_to '檀家ログイン', new_user_registration_path %></li>
-  <li><%= link_to '寺院ログイン', new_admin_registration_path %></li>
+  <li><%= link_to '檀家ログイン', new_user_session_path %></li>
+  <li><%= link_to '寺院ログイン', new_admin_session_path %></li>
 <% end %>
