@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_112117) do
+ActiveRecord::Schema.define(version: 2020_04_15_205911) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,31 @@ ActiveRecord::Schema.define(version: 2020_04_14_112117) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
     t.index ["tel"], name: "index_admins_on_tel"
     t.index [nil], name: "index_admins_on_neme_kana"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer "admin_id", null: false
+    t.string "title", null: false
+    t.datetime "start_datetime", null: false
+    t.datetime "end_datetime", null: false
+    t.datetime "time", null: false
+    t.text "introduction", null: false
+    t.text "comment", null: false
+    t.string "image_id", null: false
+    t.boolean "validity", default: true, null: false
+    t.integer "limit_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reserves", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "event_id", null: false
+    t.datetime "start_datetime", null: false
+    t.integer "join_count", null: false
+    t.text "cancel_request", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
