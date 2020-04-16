@@ -22,4 +22,23 @@ Rails.application.routes.draw do
   root 'homes#top'
   # aboutパス
   get 'homes/about'
+
+  # adminサイトrouting
+  namespace :admins do
+    get 'homes/top' => 'homes#top', as:'top'
+  end
+
+  namespace :admins do
+    resources :admins, only:[:show, :edit, :update]
+  end
+
+  namespace :admins do
+    resources :events, only:[:index, :edit, :create, :update, :destroy]
+  end
+
+  namespace :admins do
+    resources :users, only:[:index, :edit, :show, :update]
+  end
+
+  # userサイトrouting
 end
