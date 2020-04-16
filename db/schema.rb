@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_205911) do
     t.integer "post_code", null: false
     t.string "address", null: false
     t.integer "tel", null: false
-    t.string "image_id", null: false
+    t.string "image_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 2020_04_15_205911) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["name"], name: "index_admins_on_name"
+    t.index ["name_kana"], name: "index_admins_on_name_kana"
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
     t.index ["tel"], name: "index_admins_on_tel"
-    t.index [nil], name: "index_admins_on_neme_kana"
   end
 
   create_table "events", force: :cascade do |t|
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_205911) do
     t.string "first_name_kana", null: false
     t.integer "post_code", null: false
     t.string "address", null: false
-    t.string "domicile", null: false
+    t.string "domicle", null: false
     t.integer "tel", null: false
     t.boolean "is_active", default: true, null: false
     t.string "email", default: "", null: false

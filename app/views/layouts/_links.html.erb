@@ -1,7 +1,12 @@
 <% if admin_signed_in? %>
   <li><%= link_to 'サイト概要', homes_about_path, class: 'about' %></li>
+  <li><%= link_to '行持管理', admins_events_path, class: 'admins_events' %></li>
+  <li><%= link_to '寺院ページ', admins_admin_path(current_admin.id), class: 'admins_admin' %></li>
+  <li><%= link_to '檀家一覧', admins_users_path, class: 'admins_users' %></li>
+  <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'logout' %></li>
 <% elsif user_signed_in? %>
   <li><%= link_to 'サイト概要', homes_about_path, class: 'about' %></li>
+  <li><%= link_to 'ログアウト', destroy_admin_session_path, class: 'logout' %></li>
 <% else %>
   <li><%= link_to 'サイト概要', homes_about_path, class: 'about' %></li>
   <li><%= link_to '檀家ログイン', new_user_session_path %></li>

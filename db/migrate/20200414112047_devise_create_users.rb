@@ -11,7 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_name_kana, null: false
       t.integer :post_code, null: false
       t.string :address, null: false
-      t.string :domicile, null: false
+      t.string :domicle, null: false
       t.integer :tel, null: false
       t.boolean :is_active, null: false, default: true
       t.string :email,              null: false, default: ''

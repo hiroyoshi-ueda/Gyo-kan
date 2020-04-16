@@ -9,7 +9,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
       t.integer :post_code, null: false
       t.string :address, null: false
       t.integer :tel, null: false
-      t.string :image_id, null: false
+      t.string :image_id
       t.string :email,              null: false, default: ''
       t.string :encrypted_password, null: false, default: ''
 
@@ -44,7 +44,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
     add_index :admins, :email,                unique: true
     add_index :admins, :reset_password_token, unique: true
     add_index :admins, :name
-    add_index :admins, :neme_kana
+    add_index :admins, :name_kana
     add_index :admins, :tel
 
     # add_index :admins, :confirmation_token,   unique: true
