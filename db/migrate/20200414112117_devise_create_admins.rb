@@ -6,9 +6,9 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
       ## Database authenticatable
       t.string :name, null: false
       t.string :name_kana, null: false
-      t.integer :post_code, null: false
+      t.string :post_code, null: false
       t.string :address, null: false
-      t.integer :tel, null: false
+      t.string :tel, null: false
       t.string :image_id
       t.string :email,              null: false, default: ''
       t.string :encrypted_password, null: false, default: ''
