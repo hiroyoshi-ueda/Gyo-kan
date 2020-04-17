@@ -1,1 +1,46 @@
-<h1>admin edit</h1>
+<div class="admin show container">
+  <h2>寺院情報編集</h2>
+  <%= form_for(@admin,url: admins_admin_path(@admin), method: :patch) do |f| %>
+  <div class="row">
+  	<div class='col-xs-3'>
+  		<%= attachment_image_tag(@admin, :image, :fill, 180, 180, fallback: "logo.jpg") %>
+        <%= f.attachment_field :image %>
+    </div>
+  	<div class='col-xs-4'>
+  	  <table class='table table-admin-edit'>
+	  	<table border="0" width="600" >
+		  <tr>
+		    <th>寺院名</th>
+		  	<td><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
+		  </tr>
+		  <tr>
+		    <th>フリガナ</th>
+		  	<td><%= f.text_field :name_kana, autofocus: true, autocomplete: "name_kana" %></td>
+		  </tr>
+		  <tr>
+		    <th>郵便番号(ハイフンなし)</th>
+		  	<td><%= f.text_field :post_code, autofocus: true, autocomplete: "post_code" %></td>
+		  </tr>
+		  <tr>
+		    <th>住所</th>
+		  	<td><%= f.text_field :address, autofocus: true, autocomplete: "address" %></td>
+		  </tr>
+		  <tr>
+		    <th>メールアドレス</th>
+		  	<td><%= f.text_field :email, autofocus: true, autocomplete: "email" %></td>
+		  </tr>
+		  <tr>
+		    <th>電話番号</th>
+		  	<td><%= f.text_field :tel, autofocus: true, autocomplete: "tel" %></td>
+		  </tr>
+		</table>
+	  </table>
+
+	  <div class="col-xs-12 " >
+	      <div class="col-xs-3 pull-right">
+            <%= f.submit "変更を保存", class: "btn btn-primary " %>
+          </div>
+	</div>
+  </div>
+  <% end %>
+</div>
