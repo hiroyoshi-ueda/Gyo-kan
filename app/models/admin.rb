@@ -7,6 +7,7 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :users
   has_many :events
+  attachment :image
 
   validates :name, length: { minimum: 2, maximum: 20 }
   validates :name_kana, length: { minimum: 2, maximum: 30 }

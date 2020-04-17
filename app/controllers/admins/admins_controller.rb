@@ -1,21 +1,29 @@
 # frozen_string_literal: true
 
 class Admins::AdminsController < ApplicationController
-	before_action :authenticate_admin!
+  before_action :authenticate_admin!
 
-	def show
-		@admin = Admin.find(params[:id])
-	end
+  def show
+    @admin = Admin.find(params[:id])
+  end
 
-	def edit
-	end
+  def edit
+    @admin = Admin.find(params[:id])
+  end
 
-	def update
-	end
+  def update
+  	@admin = Admin.find(params[:id])
+  	if @admin.update(admin_params)
+  		redirect_to admins_admin_path, success: '寺院情報を更新しました'
+  	else
+  	flash[:danger] = '寺院情報の更新に失敗しました。空欄等入力情報を確認してください'
+  	render :edit
+    end
+  end
 
-	private
-	  def admin_params
-	  	params.reqire(:admin).permit(:name, :name_kana, :post_code, :email, :tel)
-	  end
+  private
 
+  def admin_params
+    params.require(:admin).permit(:name, :name_kana, :post_code, :address, :email, :tel, :image)
+    end
 end

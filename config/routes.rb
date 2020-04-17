@@ -25,19 +25,19 @@ Rails.application.routes.draw do
 
   # adminサイトrouting
   namespace :admins do
-    get 'homes/top' => 'homes#top', as:'top'
+    get 'homes/top' => 'homes#top', as: 'top'
   end
 
   namespace :admins do
-    resources :admins, only:[:show, :edit, :update]
+    resources :admins, only: %i[show edit update]
   end
 
   namespace :admins do
-    resources :events, only:[:index, :edit, :create, :update, :destroy]
+    resources :events, only: %i[index edit create update destroy]
   end
 
   namespace :admins do
-    resources :users, only:[:index, :edit, :show, :update]
+    resources :users, only: %i[index edit show update]
   end
 
   # userサイトrouting
