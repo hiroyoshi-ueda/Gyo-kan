@@ -2,5 +2,7 @@
 
 class Event < ApplicationRecord
   has_many :reserves
-  belongs_to :events
+  belongs_to :admins
+
+  attachment :image
 end
