@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admins do
-    resources :events, only: %i[index edit create update destroy]
+    resources :events, only: %i[index edit create update]
   end
 
   namespace :admins do

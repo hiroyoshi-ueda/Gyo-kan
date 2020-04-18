@@ -82,3 +82,7 @@ gem 'pry-rails'
 # リーダブルコード
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
+
+# カレンダー
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'

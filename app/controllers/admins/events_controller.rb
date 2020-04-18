@@ -3,13 +3,37 @@
 class Admins::EventsController < ApplicationController
   before_action :authenticate_admin!
 
-  def index; end
+  def index
+  	@event = Event.new
+  	@events = Event.all
+  end
 
-  def edit; end
+  def edit
+  	@event = Evnet.find(params[:id])
+  end
 
-  def create; end
+  def create
+  	@event = Event.new(event_params)
+  	if @event.save
+  	   redirect_to admins_events_path, success:'新しい行持が作成されました'
+  	else
+  	  @events = Event.all
+  	  flash[:danger] = '新規行持の作成に失敗しました。入力情報を確認してください'
+  	  render :index
+  	end
+  end
 
-  def update; end
+  def update
+  	@event = Event.find(params[:id])
+  	if @event.update(event_params)
+  	   redirect_to admins_events_path, success:'行持情報が更新されました'
+  	else
+  		flash[:danger] = '行持の情報更新に失敗しました。編集内容を確認してください'
+  		render :edit
+  	end
+  end
 
-  def destroy; end
+  def event_params
+  	params.require(:event).permit(:title, :start_datetime, :end_datetime, :time, :introduction, :comment, :image, :validity, :limit_count)
+  end
 end

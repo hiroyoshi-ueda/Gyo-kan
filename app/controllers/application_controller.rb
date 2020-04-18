@@ -14,6 +14,12 @@ class ApplicationController < ActionController::Base
     end
     end
 
+  def after_sign_out_path_for(resource)
+    if Admin
+      root_path
+    end
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name name_kana first_name first_name_kana fam_name fam_name_kana post_code address email tel])
     # sign_upの際にnameのデータ操作を許。追加したカラム。

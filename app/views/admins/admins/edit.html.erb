@@ -36,10 +36,15 @@
 		</table>
 	  </table>
 
-	  <div class="col-xs-12 " >
-	      <div class="col-xs-3 pull-right">
-            <%= f.submit "変更を保存", class: "btn btn-primary " %>
-          </div>
+	  <table>
+          <tr>
+            <th>
+              <div class="btn-s2">
+                <%= f.submit "編集内容を保存する", class: "btn btn-success " %>
+              </div>
+            </th>
+          </tr>
+      </table>
 	</div>
   </div>
   <% end %>
