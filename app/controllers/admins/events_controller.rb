@@ -9,7 +9,7 @@ class Admins::EventsController < ApplicationController
   end
 
   def edit
-  	@event = Evnet.find(params[:id])
+  	@event = Event.find(params[:id])
   end
 
   def create
