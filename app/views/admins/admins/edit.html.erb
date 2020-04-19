@@ -3,7 +3,7 @@
   <%= form_for(@admin,url: admins_admin_path(@admin), method: :patch) do |f| %>
   <div class="row">
   	<div class='col-xs-3'>
-  		<%= attachment_image_tag(@admin, :image, :fill, 180, 180, fallback: "logo.jpg") %>
+  		<%= attachment_image_tag(@admin, :image, :fill, 180, 180, fallback: "no_image.png") %>
         <%= f.attachment_field :image %>
     </div>
   	<div class='col-xs-4'>

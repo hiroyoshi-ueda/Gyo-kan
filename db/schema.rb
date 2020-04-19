@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 2020_04_15_205911) do
     t.datetime "end_datetime", null: false
     t.datetime "time", null: false
     t.text "introduction", null: false
-    t.text "comment", null: false
-    t.string "image_id", null: false
+    t.text "comment"
+    t.string "image_id"
     t.boolean "validity", default: true, null: false
     t.integer "limit_count"
     t.datetime "created_at", null: false
