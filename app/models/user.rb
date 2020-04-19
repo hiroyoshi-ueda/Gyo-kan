@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :reserves
-  belongs_to :admins
+  belongs_to :admin
 
   validates :email, length: { minimum: 3, maximum: 80 }
   validates :fam_name, length: { minimum: 1, maximum: 15 }

@@ -33,7 +33,13 @@ class Admins::EventsController < ApplicationController
   	end
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to admins_events_path
+  end
+
   def event_params
-  	params.require(:event).permit(:title, :start_datetime, :end_datetime, :time, :introduction, :comment, :image, :validity, :limit_count)
+  	params.require(:event).permit(:admin_id, :title, :start_datetime, :end_datetime, :time, :introduction, :comment, :image, :validity, :limit_count)
   end
 end

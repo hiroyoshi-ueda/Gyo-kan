@@ -1,4 +1,5 @@
 <%= form_with model:@event,url: admins_events_path(@event), local: true do |f| %>
+<%= f.hidden_field :admin_id, value: current_admin.id %>
 <table class='table table-admin-edit'>
   <table border="0" width="600" >
   	<tr>
@@ -45,6 +46,12 @@
         <%= f.submit "行持を追加", class: "btn btn-primary " %>
       </div>
     </th>
+  </tr>
+  <tr>
+    <th>　</th>
+  </tr>
+  <tr>
+    <th>　</th>
   </tr>
 </table>
 <% end %>
