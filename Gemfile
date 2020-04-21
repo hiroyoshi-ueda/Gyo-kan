@@ -86,3 +86,6 @@ gem 'rubocop-rails', require: false
 # カレンダー
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+
+#jsに値を渡す為
+gem 'gon'
