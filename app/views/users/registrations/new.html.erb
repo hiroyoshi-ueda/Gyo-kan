@@ -9,9 +9,9 @@
         <th>名前</th>
         <td>
           <div class="form-group">
-            (姓)
+            (姓)　
             <%= f.text_field :fam_name, autofocus: true, autocomplete: "fam_name" %>
-            (名)
+            (名)　
             <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
           </div>
         </td>
@@ -58,6 +58,12 @@
         </td>
       </tr>
       <tr>
+        <th>所属寺院</th>
+        <td>
+            <%= f.collection_select :admin_id, Admin.all, :id, :name %>
+        </td>
+      </tr>
+      <tr>
         <th>パスワード(6文字以上)</th>
         <td>
             <%= f.password_field :password, autocomplete: "new-password" %>
@@ -70,13 +76,15 @@
         </td>
       </tr>
     </table>
+
+    <div style="text-align: center;">
+      <div class="actions">
+        <%= f.submit "新規登録", class:"btn btn-success" %>
+      </div>
+    </div>
+    <% end %>
+
+    <h4>すでにご登録済みの檀家様</h4>
+    <h5>　　<%= link_to "こちら", new_user_session_path  %>からログインしてください</h5>
   </div>
 </div>
-
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
