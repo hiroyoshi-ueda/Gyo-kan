@@ -7,6 +7,10 @@
           <%= link_to admins_top_path do %>
             <%= image_tag "logo.jpg", alt:"GYO-KAN", size:"240x120" %>
           <% end %>
+          <% elsif %>
+            <%= link_to users_top_path do %>
+            <%= image_tag "logo.jpg", alt:"GYO-KAN", size:"240x120" %>
+          <% end %>
           <% else %>
             <%= link_to root_path do %>
               <%= image_tag "logo.jpg", alt:"GYO-KAN", size:"240x120" %>

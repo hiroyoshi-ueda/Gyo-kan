@@ -16,7 +16,7 @@ class Admins::AdminsController < ApplicationController
   	if @admin.update(admin_params)
   		redirect_to admins_admin_path, success: '寺院情報を更新しました'
   	else
-  	flash[:danger] = '寺院情報の更新に失敗しました。空欄等入力情報を確認してください'
+  	flash[:danger] = '寺院情報の更新に失敗しました。空欄や全角半角等入力情報を確認してください'
   	render :edit
     end
   end

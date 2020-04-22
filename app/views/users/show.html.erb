@@ -1,0 +1,58 @@
+<div class="user show container">
+  <h2>檀家登録情報</h2>
+  <div class="row">
+  	<div class='col-xs-8'>
+  	  <table class='table table-admin'>
+        <table border="1" width="600" height="300" >
+          <tr>
+            <th width="30%" bgcolor="#EEEEEE">氏名</th>
+            <td width="70%"><%= @user.fam_name %><%= @user.first_name %></td>
+          </tr>
+          <tr>
+      		<th bgcolor="#EEEEEE">フリガナ</th>
+      		<td><%= @user.fam_name_kana %><%= @user.first_name_kana %></td>
+      	  </tr>
+      	  <tr>
+      		<th bgcolor="#EEEEEE">郵便番号</th>
+      		<td><%= @user.post_code %></td>
+      	  </tr>
+      	  <tr>
+      		<th bgcolor="#EEEEEE">現住所</th>
+      		<td><%= @user.address %></td>
+      	  </tr>
+      	  <tr>
+      		<th bgcolor="#EEEEEE">本籍</th>
+      		<td><%= @user.domicle %></td>
+      	  </tr>
+      	  <tr>
+      		<th bgcolor="#EEEEEE">メールアドレス</th>
+      		<td><%= @user.email %></td>
+      	  </tr>
+      	  <tr>
+      		<th bgcolor="#EEEEEE">電話番号</th>
+      		<td><%= @user.tel %></td>
+      	  </tr>
+      	  <tr>
+      		<th bgcolor="#EEEEEE">電話番号</th>
+      		<td><%= @user.tel %></td>
+      	  </tr>
+      	</table>
+
+      	<table>
+          <tr>
+            <th>
+              <div class="btn-s">
+                <%= link_to "編集ページへ", edit_user_path(current_user.id), class: "btn btn-success bn-lg" %>
+              </div>
+            </th>
+            <td>
+              <div class="btn-p">
+                <%= link_to "トップへ戻る", users_top_path, class: "btn btn-primary bn-lg" %>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </table>
+  	</div>
+  </div>
+</div>

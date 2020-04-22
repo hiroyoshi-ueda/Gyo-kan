@@ -41,4 +41,10 @@ Rails.application.routes.draw do
   end
 
   # userサイトrouting
+  namespace :users do
+    get 'homes/top' => 'homes#top', as: 'top'
+  end
+
+  resources :users, only:[:show, :edit, :update]
+
 end
