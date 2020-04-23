@@ -1,0 +1,57 @@
+<div class="admin edit container">
+  <h2>行持情報編集</h2>
+  <%= form_with model:@event,url: admins_event_path(@event), method: :patch do |f| %>
+  <div class='col-xs-3'>
+   	 <%= attachment_image_tag(@event, :image, :fill, 180, 180, fallback: "no_image.png") %>
+     <%= f.attachment_field :image, class: "event-edit-form" %>
+  </div>
+  <div class='col-xs-9'>
+  	<table class='table table-admin-edit'>
+	  	<table border="0" width="600" >
+		  <tr>
+		    <th>行持名</th>
+		    <td><%= f.text_field :title, autofocus: true, autocomplete: "title" %></td>
+		  </tr>
+		  <tr>
+		    <th>開始日時</th>
+		    <td><%= f.datetime_select :start_datetime, autofocus: true, autocomplete: "start_datetime" %></td>
+		  </tr>
+		  <tr>
+		    <th>終了日時</th>
+		    <td><%= f.datetime_select :end_datetime, autofocus: true, autocomplete: "end_datetime" %></td>
+		  </tr>
+		  <tr>
+		    <th>所用時間</th>
+		    <td><%= f.text_field :time, autofocus: true, autocomplete: "time" %>　分</td>
+		  </tr>
+		  <tr>
+		    <th>制限人数</th>
+		    <td><%= f.text_field :limit_count, autofocus: true, autocomplete: "limit_count" %></td>
+		  </tr>
+		  <tr>
+  	        <th>行持概要</th>
+  	        <td><%= f.text_area :introduction, class: "event_introduction" %></td>
+  	      </tr>
+		  <tr>
+		    <th>
+		      <%= f.radio_button :validity, :true %>
+		      <%= f.label :validity, "有効", {value: :true, style: "display: inline-block;"} %>
+		    </th>
+		    <td>
+  		      <%= f.radio_button :validity, :false %>
+  		      <%= f.label :validity, "無効", {value: :false, style: "display: inline-block;"} %>
+		  	</td>
+		  </tr>
+		</table>
+    </table>
+    <table>
+      <tr>
+        <th>
+          <div class="btn-s">
+            <%= f.submit "編集内容を更新", class: "btn btn-success " %>
+          </div>
+        </th>
+      </tr>
+    </table>
+  <% end %>
+  </div>
