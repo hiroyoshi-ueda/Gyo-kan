@@ -47,4 +47,7 @@ Rails.application.routes.draw do
 
   resources :users, only:[:show, :edit, :update]
 
+  namespace :users do
+  resources :admins, only:[:show]
+  end
 end
