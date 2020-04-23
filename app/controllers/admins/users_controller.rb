@@ -3,7 +3,9 @@
 class Admins::UsersController < ApplicationController
   before_action :authenticate_admin!
 
-  def index; end
+  def index
+  	@users = User.all
+  end
 
   def show; end
 
