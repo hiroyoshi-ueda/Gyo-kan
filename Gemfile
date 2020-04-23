@@ -89,9 +89,3 @@ gem 'momentjs-rails'
 
 #jsに値を渡す為
 gem 'gon'
-
-#MySQLを利用するため
-gem 'dotenv-rails'
-  group :production do
-  gem 'mysql2'
-end
