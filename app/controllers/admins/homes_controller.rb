@@ -3,6 +3,6 @@
 class Admins::HomesController < ApplicationController
   before_action :authenticate_admin!
   def top
-  	gon.events = Event.all
+  	gon.events = current_admin.events
   end
 end

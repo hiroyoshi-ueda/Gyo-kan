@@ -31,12 +31,8 @@ $(function () {
         $('#calendar').html('');
     };
 //初回読み込み、リロード、ページ切り替えで動く。turbolinks回避のため
-    $(document).on('turbolinks:load', () => {
-    $('#calendar').fullCalendar({})
-  })
-
-
 // カレンダーの表示オプション
+$(document).on('turbolinks:load', () => {
     $('#calendar').fullCalendar({
     // 日本語表記に
     header: {
@@ -89,4 +85,5 @@ $(function () {
         callback(events);
     }
     });
+    })
 });
