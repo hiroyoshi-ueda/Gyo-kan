@@ -22,7 +22,7 @@
 // カレンダー関連
 
 $(function () {
-// カレンダーを正しく読み込むために、関数を2つ作成
+// カレンダーを正しく読み込むための記載。複数表示されないように関数を2つ作成
 	console.log(gon.events)
     function eventCalendar() {
         return $('#calendar').fullCalendar({});

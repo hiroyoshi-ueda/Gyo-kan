@@ -32,8 +32,8 @@
 		  	<th><%= event.start_datetime %></th>
 		  	<th><%= event.end_datetime %></th>
 		  	<th>
-		  	  <% if event.validity == true %>有効
-		  	  <% else event.validity == false %>無効
+		  	  <% if event.validity == true %>表示
+		  	  <% else event.validity == false %>非表示
 		  	  <% end %>
 		  	</th>
 		  	<th><%= link_to '編集', edit_admins_event_path(event), class: "btn btn-success" %></th>

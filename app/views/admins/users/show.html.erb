@@ -36,6 +36,14 @@
       		<th bgcolor="#EEEEEE">所属寺院</th>
       		<td><%= @user.admin.name %></td>
       	  </tr>
+          <tr>
+          <th bgcolor="#EEEEEE">ステータス</th>
+          <td>
+            <% if @user.is_active == true %>檀家
+            <% else @user.is_active == false %>離檀
+            <% end %>
+          </td>
+          </tr>
       	</table>
 
       	<table>
