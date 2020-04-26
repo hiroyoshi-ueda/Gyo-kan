@@ -3,7 +3,10 @@
 class Admins::HomesController < ApplicationController
   before_action :authenticate_admin!
   def top
+  	# JSに受け渡す為
   	gon.events = current_admin.events
+  	# 当日分のイベントレコードを取り出す
+  	@events = current_admin.events.where(created_at: Time.zone.now.all_day)
   end
 
   private
