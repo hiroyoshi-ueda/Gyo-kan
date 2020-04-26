@@ -5,11 +5,16 @@ class Admins::EventsController < ApplicationController
 
   def index
   	@event = Event.new
-  	@events = Event.all
+    @events = current_admin.events
+  	# @events = @admin.events
   end
 
   def edit
   	@event = Event.find(params[:id])
+  end
+
+  def show
+    @event = Event.find(params[:id])
   end
 
   def create
@@ -38,6 +43,8 @@ class Admins::EventsController < ApplicationController
     @event.destroy
     redirect_to admins_events_path
   end
+
+  private
 
   def event_params
   	params.require(:event).permit(:admin_id, :title, :start_datetime, :end_datetime, :time, :introduction, :comment, :image, :validity, :limit_count)

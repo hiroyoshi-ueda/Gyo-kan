@@ -22,21 +22,19 @@
 // カレンダー関連
 
 $(function () {
-// カレンダーを正しく読み込むために、関数を2つ作成
+// カレンダーを正しく読み込むための記載。複数表示されないように関数を2つ作成
+　　// 設定を読みこむ
 	console.log(gon.events)
     function eventCalendar() {
         return $('#calendar').fullCalendar({});
     };
+    // 複数表示されないようカレンダーを削除
     function clearCalendar() {
         $('#calendar').html('');
     };
 //初回読み込み、リロード、ページ切り替えで動く。turbolinks回避のため
-    $(document).on('turbolinks:load', () => {
-    $('#calendar').fullCalendar({})
-  })
-
-
 // カレンダーの表示オプション
+$(document).on('turbolinks:load', () => {
     $('#calendar').fullCalendar({
     // 日本語表記に
     header: {
@@ -48,7 +46,7 @@ $(function () {
 		left: 'today prev', //左側に配置する要素
 		center: 'title', //中央に配置する要素
 		right: 'next' //右側に配置する要素
-	},
+	  },
       monthNames: ['１月','２月','３月','４月','５月','６月','７月','８月','９月','１０月','１１月','１２月'],
       monthNamesShort: ['１月','２月','３月','４月','５月','６月','７月','８月','９月','１０月','１１月','１２月'],
       dayNames: ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'],
@@ -73,6 +71,11 @@ $(function () {
     }
     ]*/
 
+    //イベントクリック
+    eventClick: function(calEvent, jsEvent, view) {
+       select_day(calEvent, jsEvent, view)
+    },
+
     // 登録したイベントを表示させる
     events: function(start, end, timezone, callback) {
     	var events = [];
@@ -87,6 +90,7 @@ $(function () {
           });
         };
         callback(events);
-    }
+        }
     });
+    })
 });

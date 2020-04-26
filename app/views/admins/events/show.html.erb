@@ -1,0 +1,61 @@
+<div class="event show container">
+  <h2>行持情報</h2>
+    <div class="row">
+      <div class='col-xs-4'>
+      	<%= attachment_image_tag(@event, :image, :fill, 180, 180, fallback: "no_image.png") %>
+      </div>
+      <div class='col-xs-8'>
+    	<table class='table table-admin-event-show'>
+	  	<table border="0" width="600" height="300" >
+	  	  <tr>
+            <th width="30%">行持名</th>
+            <td width="70%"><%= @event.title %></td>
+          </tr>
+          <tr>
+            <th width="30%">開始日時</th>
+            <td width="70%"><%= @event.start_datetime %></td>
+          </tr>
+          <tr>
+            <th width="30%">終了日時</th>
+            <td width="70%"><%= @event.end_datetime %></td>
+          </tr>
+          <tr>
+            <th width="30%"">所用時間</th>
+            <td width="70%"><%= @event.time %></td>
+          </tr>
+          <tr>
+            <th width="30%">制限人数</th>
+            <td width="70%"><%= @event.limit_count %></td>
+          </tr>
+          <tr>
+            <th width="30%">行持概要</th>
+            <td width="70%"><%= @event.introduction %></td>
+          </tr>
+          <tr>
+            <th width="30%">表示状態</th>
+            <td width="70%">
+              <% if @event.validity == true %>表示
+		  	  <% else @event.validity == false %>非表示
+		  	  <% end %>
+            </td>
+          </tr>
+	  	</table>
+	    </table>
+
+	    <table>
+          <tr>
+            <th>
+              <div class="btn-s">
+                <%= link_to "編集ページへ", edit_admins_event_path(@event), class: "btn btn-success bn-lg" %>
+              </div>
+            </th>
+            <td>
+              <div class="btn-p">
+                <%= link_to "行持一覧へ戻る", admins_events_path, class: "btn btn-primary bn-lg" %>
+              </div>
+            </td>
+          </tr>
+        </table>
+	  </div>
+    </div>
+</div>
