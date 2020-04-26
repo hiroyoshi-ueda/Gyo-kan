@@ -23,10 +23,12 @@
 
 $(function () {
 // カレンダーを正しく読み込むための記載。複数表示されないように関数を2つ作成
+　　// 設定を読みこむ
 	console.log(gon.events)
     function eventCalendar() {
         return $('#calendar').fullCalendar({});
     };
+    // 複数表示されないようカレンダーを削除
     function clearCalendar() {
         $('#calendar').html('');
     };

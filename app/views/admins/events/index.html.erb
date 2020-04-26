@@ -27,7 +27,9 @@
 		  <tr>
 		  	<th>
 		  		<%= attachment_image_tag(@event, :image, :fill, 150, 50, fallback: "no_image.png") %>
-		  		<%= event.title %>
+		  		<%= link_to admins_event_path(event.id) do %>
+		  		  <%= event.title %>
+		  		<% end %>
 		  	</th>
 		  	<th><%= event.start_datetime %></th>
 		  	<th><%= event.end_datetime %></th>
