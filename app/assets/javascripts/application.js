@@ -72,9 +72,12 @@ $(document).on('turbolinks:load', () => {
     ]*/
 
     //イベントクリック
-    eventClick: function(calEvent, jsEvent, view) {
-       select_day(calEvent, jsEvent, view)
+    eventClick: function(event) {
+       if (confirm('ページ遷移しますか？')) {
+    　　　　window.location.href = '/admins/events/:id';
+  　　}
     },
+
 
     // 登録したイベントを表示させる
     events: function(start, end, timezone, callback) {
