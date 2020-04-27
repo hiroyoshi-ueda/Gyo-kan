@@ -72,9 +72,10 @@ $(document).on('turbolinks:load', () => {
     ]*/
 
     //イベントクリック
-    eventClick: function(event) {
-       if (confirm('ページ遷移しますか？')) {
-    　　　　window.location.href = '/admins/events/:id';
+    eventClick: function(event, view) {
+      // console.log(event.id)
+       if (confirm(event.title + '詳細ページへ遷移しますか？')) {
+    　　　　window.location.href = `/admins/events/${event.id}`;
   　　}
     },
 
@@ -87,6 +88,7 @@ $(document).on('turbolinks:load', () => {
         	var starttime = (new Date(gon.events[i].start_datetime)).getTime()+(9*60*60*1000);
         	var endtime = (new Date(gon.events[i].end_datetime)).getTime()+(9*60*60*1000);
           events.push({
+            id: gon.events[i].id,
             title: gon.events[i].title,
             start: starttime,
             end: endtime
