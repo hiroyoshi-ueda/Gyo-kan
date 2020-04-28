@@ -52,7 +52,7 @@ $(document).on('turbolinks:load', () => {
     eventClick: function(event) {
       // console.log(event.id)
        if (confirm(event.title + '詳細ページへ遷移しますか？')) {
-    　　　 window.location.href = `/`;
+    　　　 window.location.href = `/events/${event.id}`;
        }
     },
 

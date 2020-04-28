@@ -47,6 +47,8 @@ Rails.application.routes.draw do
 
   resources :users, only:[:show, :edit, :update]
 
+  resources :events, only:[:show]
+
   namespace :users do
   resources :admins, only:[:show]
   end
