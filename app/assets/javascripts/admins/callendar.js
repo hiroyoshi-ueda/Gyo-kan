@@ -4,7 +4,7 @@ $(function () {
 	console.log(gon.events)
     function eventCalendar() {
         return $('#calendar').fullCalendar({});
-    };
+  　};
     // 複数表示されないようカレンダーを削除
     function clearCalendar() {
         $('#calendar').html('');
