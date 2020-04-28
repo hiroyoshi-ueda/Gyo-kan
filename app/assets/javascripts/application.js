@@ -19,5 +19,4 @@
 //= require bootstrap-sprockets
 // require_tree .
 
-// カレンダー関連
 

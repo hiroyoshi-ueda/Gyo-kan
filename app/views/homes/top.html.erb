@@ -1,13 +1,20 @@
 <div class="container">
-  <div class="row">
-    <h1>Top</h1>
+  <div class="row" style = "text-align: center">
+    <h1><strong>Gyo-kan</strong></h1>
+    <h4>
+      寺院の行持をカレンダーで確認できます。<br>
+      仏事をもっと身近に感じてみませんか？
+    </h4>
+    <div class='top_img'>
+      <%= image_tag 'top_img1.jpeg', size: '800x400' %>
+    </div>
     <div class="btn-wrapper">
-	  <div class="row">
+	  <div class="row btn-i">
 	    <p><%= link_to "檀家の方の新規登録はこちら",new_user_registration_path, class: "btn btn-info col-xs-6 col-xs-offset-3 user_sign_in" %></p>
-		</div>
-		<div class="row">
+	  </div>
+	  <div class="row ">
 			<p><%= link_to "寺院の方の新規登録はこちら",new_admin_registration_path, class: "btn btn-success col-xs-6 col-xs-offset-3 admin_sign_in" %></p>
-		</div>
+	  </div>
 	</div>
   </div>
 </div>
