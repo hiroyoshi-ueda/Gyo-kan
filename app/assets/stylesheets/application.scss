@@ -24,6 +24,13 @@
 	height: 100px;
 }
 
+.navbar-gyo-kan{
+  background-image: url(header.jpg);
+  background-size: cover;
+  background-position: 0% 55%;
+  background-blend-mode:lighten;
+}
+
 .navbar{
 	border-bottom:3px groove #FFFFFF;
 }
@@ -39,26 +46,39 @@
 
 .navbar-link{
 		padding-right: 50px;
+    border:0px groove #FFFFFF;
+    background-color: rbga(224, 225, 255, 0.2);
+}
+
+.header-logo{
+  background-color:#EAD9FF;
+  margin-left: 70px;
+
 }
 
 .header-message {
 　margin-left: 300px;
+  color:#FFFFFF;
 }
 
 
 /* body */
+
+
 body{
   padding-top: 120px;
   padding-bottom: 110px;
   min-height: 100vh;
   position: relative;
   box-sizing: border-box;
+
 }
 
 body-container{
 	margin: auto;
 	padding: 30px;
 	width:90%;
+  background-color: #FFFFFF;
 }
 
 
