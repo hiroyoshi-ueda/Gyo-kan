@@ -13,11 +13,11 @@
           </tr>
           <tr>
             <th width="30%">開始日時</th>
-            <td width="70%"><%= @event.start_datetime %></td>
+            <td width="70%"><%= @event.start_datetime.strftime("%Y年%m月%d日 %H時%M分") %></td>
           </tr>
           <tr>
             <th width="30%">終了日時</th>
-            <td width="70%"><%= @event.end_datetime %></td>
+            <td width="70%"><%= @event.end_datetime.strftime("%Y年%m月%d日 %H時%M分") %></td>
           </tr>
           <tr>
             <th width="30%">所用時間</th>

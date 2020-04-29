@@ -13,11 +13,11 @@
           </tr>
           <tr>
             <th width="30%">開始日時</th>
-            <td width="70%"><%= @event.start_datetime %></td>
+            <td width="70%"><%= @event.start_datetime.strftime("%Y年%m月%d日 %H時%M分") %></td>
           </tr>
           <tr>
             <th width="30%">終了日時</th>
-            <td width="70%"><%= @event.end_datetime %></td>
+            <td width="70%"><%= @event.end_datetime.strftime("%Y年%m月%d日 %H時%M分") %></td>
           </tr>
           <tr>
             <th width="30%">所用時間</th>
@@ -51,7 +51,7 @@
             </th>
             <td>
               <div class="btn-p">
-                <%= link_to "行持一覧へ戻る", admins_events_path, class: "btn btn-primary bn-lg" %>
+                <%= link_to "行持一覧へ", admins_events_path, class: "btn btn-primary bn-lg" %>
               </div>
             </td>
           </tr>

@@ -64,12 +64,14 @@ $(document).on('turbolinks:load', () => {
         	// なぜか９時間前で表示されるため、９時間分足すことを記述
         	var starttime = (new Date(gon.events[i].start_datetime)).getTime()+(9*60*60*1000);
         	var endtime = (new Date(gon.events[i].end_datetime)).getTime()+(9*60*60*1000);
-          events.push({
-            id: gon.events[i].id,
-            title: gon.events[i].title,
-            start: starttime,
-            end: endtime
-          });
+          if(gon.events[i].validity == true ){
+            events.push({
+              id: gon.events[i].id,
+              title: gon.events[i].title,
+              start: starttime,
+              end: endtime
+            });
+          };
         };
         callback(events);
         }
