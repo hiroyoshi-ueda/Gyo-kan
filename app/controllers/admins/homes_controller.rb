@@ -6,7 +6,7 @@ class Admins::HomesController < ApplicationController
   	# JSに受け渡す為
   	gon.events = current_admin.events
   	# 当日分のイベントレコードを取り出す
-  	@events = current_admin.events.where(created_at: Time.zone.now.all_day)
+  	@events = current_admin.events.where(created_at: Time.zone.now.all_day).order("start_datetime")
   end
 
   private

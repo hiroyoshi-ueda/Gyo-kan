@@ -5,7 +5,7 @@ class Admins::EventsController < ApplicationController
 
   def index
   	@event = Event.new
-    @events = current_admin.events
+    @events = current_admin.events.order("start_datetime DESC")
   	# @events = @admin.events
   end
 
@@ -43,6 +43,7 @@ class Admins::EventsController < ApplicationController
     @event.destroy
     redirect_to admins_events_path
   end
+
 
   private
 
