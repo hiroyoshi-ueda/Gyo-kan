@@ -31,8 +31,8 @@
 		  		  <%= event.title %>
 		  		<% end %>
 		  	</th>
-		  	<th><%= event.start_datetime %></th>
-		  	<th><%= event.end_datetime %></th>
+		  	<th><%= event.start_datetime.strftime("%Y年%m月%d日 %H時%M分") %></th>
+		  	<th><%= event.end_datetime.strftime("%Y年%m月%d日 %H時%M分") %></th>
 		  	<th>
 		  	  <% if event.validity == true %>表示
 		  	  <% else event.validity == false %>非表示

@@ -19,23 +19,24 @@
 	padding-top: 80px;
 }
 
+
 //スライドショー(home/top)
 #container_top {
-	height: 600px;
+	height: 400px;
 }
 
 .slide:nth-child(1) {
-	background-image: url(top_img1.jpeg);
+	background-image: url(top_img1.jpg);
 }
 
 .slide:nth-child(2) {
-	background-image: url(top_img2.jpeg);
+	background-image: url(top_img2.jpg);
 }
 
 .slide:nth-child(3) {
-	background-image: url(top_img3.jpeg);
+	background-image: url(top_img3.jpg);
 }
 
 .slide:nth-child(4) {
-	background-image: url(top_img4.jpeg);
+	background-image: url(top_img4.jpg);
 }
