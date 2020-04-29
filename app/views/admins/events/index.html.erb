@@ -1,12 +1,9 @@
 <div class="container">
   <div class="row">
    <h2>新規行持追加・一覧画面</h2>
-   <%= form_with model:@event,url: admins_events_path(@event), method: :patch do |f| %>
-   <div class='col-xs-4'>
-   	 <%= attachment_image_tag(@event, :image, :fill, 180, 180, fallback: "no_image.png") %>
-     <%= f.attachment_field :image, class: "event-form" %>
-   </div>
-   <% end %>
+   
+     
+   
    <div class='col-xs-8'>
    	<%= render 'form', event: @event %>
    </div>
@@ -26,7 +23,7 @@
 		  <% @events.each do |event| %>
 		  <tr>
 		  	<th>
-		  		<%= attachment_image_tag(@event, :image, :fill, 50, 50, fallback: "no_image.png",size:'80x80') %>
+		  		<%= attachment_image_tag(event, :image, :fill, 50, 50, fallback: "no_image.png",size:'80x80') %>
 		  		<%= link_to admins_event_path(event.id) do %>
 		  		  <%= event.title %>
 		  		<% end %>

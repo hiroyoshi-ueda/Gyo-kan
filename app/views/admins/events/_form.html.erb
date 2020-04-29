@@ -2,6 +2,10 @@
 <%= f.hidden_field :admin_id, value: current_admin.id %>
 <table class='table table-admin-edit'>
   <table border="0" width="600" >
+    <tr>
+      <th>画像</th>
+    　　<td><%= f.attachment_field :image, class: "event-form" %></td>
+    </tr>
   	<tr>
   	  <th>行持名</th>
   	  <td><%= f.text_field :title, class: "event_title" %></td>
