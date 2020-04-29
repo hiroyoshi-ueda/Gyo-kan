@@ -6,7 +6,7 @@ class Admins::UsersController < ApplicationController
   def index
   	 # @user = User.find(params[:id])
   	 # @users = @user.admin
-  	 @users = current_admin.users
+  	 @users = current_admin.users.order("fam_name_kana")
   	 # @users = User.all
   end
 
