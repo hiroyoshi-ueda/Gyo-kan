@@ -1,5 +1,6 @@
 <div class="admin show container">
   <h2>寺院情報編集</h2>
+  <%= render partial: 'layouts/flash', flash: flash %>
   <%= form_for(@admin,url: admins_admin_path(@admin), method: :patch) do |f| %>
   <div class="row">
   	<div class='col-xs-3'>

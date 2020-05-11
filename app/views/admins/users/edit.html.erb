@@ -1,5 +1,6 @@
 <div class="container user edit">
 <h2>檀家情報編集</h2>
+<%= render partial: 'layouts/flash', flash: flash %>
   <%= form_for(@user,url: admins_user_path(@user), method: :patch) do |f| %>
     <div class="row">
     	<div class="col-xs-8">
