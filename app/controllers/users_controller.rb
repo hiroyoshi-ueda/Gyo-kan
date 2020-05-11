@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 		if @user.update(user_params)
 		   redirect_to user_path, success:'檀家情報を更新しました'
 		else
-		  falsh[:danger] = "檀家情報の更新に失敗しました。空欄や全角半角等入力情報を確認してください"
+		  flash[:danger] = "檀家情報の更新に失敗しました。空欄や全角半角等入力情報を確認してください"
 		  render :edit
 		end
 	end
