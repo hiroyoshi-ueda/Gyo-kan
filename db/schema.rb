@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_205911) do
     t.string "title", null: false
     t.datetime "start_datetime", null: false
     t.datetime "end_datetime", null: false
-    t.integer "time", null: false
+    t.integer "time"
     t.text "introduction", null: false
     t.text "comment"
     t.string "image_id"
