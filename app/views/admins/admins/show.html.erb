@@ -1,5 +1,6 @@
 <div class="admin show container">
 	<h2>寺院登録情報</h2>
+  <%= render partial: 'layouts/flash', flash: flash %>
   <div class="row">
   	<div class='col-xs-3'>
       <%= attachment_image_tag(@admin, :image, :fill, 180, 180, fallback: "no_image.png") %>

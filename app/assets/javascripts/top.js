@@ -6,6 +6,6 @@ $(document).ready(function () {
       navType: 'bubble',
       childrenElementType: 'div',
       autoPlay: true,
-      autoPlayDuration: 2000
+      autoPlayDuration: 3000
     });
 });

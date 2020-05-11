@@ -11,7 +11,8 @@ $(function () {
     };
 //初回読み込み、リロード、ページ切り替えで動く。turbolinks回避のため
 // カレンダーの表示オプション
-$(document).on('turbolinks:load', () => {
+
+  console.log('test')
     $('#calendar').fullCalendar({
     // 日本語表記に
     header: {
@@ -75,6 +76,5 @@ $(document).on('turbolinks:load', () => {
         };
         callback(events);
         }
-    });
     })
 });
