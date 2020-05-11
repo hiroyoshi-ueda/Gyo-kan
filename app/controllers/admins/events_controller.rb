@@ -31,7 +31,7 @@ class Admins::EventsController < ApplicationController
   def update
   	@event = Event.find(params[:id])
   	if @event.update(event_params)
-  	   redirect_to admins_events_path, success:'行持情報が更新されました'
+  	   redirect_to admins_event_path, success:'行持情報が更新されました'
   	else
   		flash[:danger] = '行持の情報更新に失敗しました。編集内容を確認してください'
   		render :edit

@@ -1,7 +1,7 @@
 <%= form_with model:@event,url: admins_events_path(@event), local: true do |f| %>
 <%= f.hidden_field :admin_id, value: current_admin.id %>
 <table class='table table-admin-edit'>
-  <table border="0" width="600" >
+  <table border="0" width="700" >
     <tr>
       <th>画像</th>
     　　<td><%= f.attachment_field :image, class: "event-form" %></td>
@@ -38,6 +38,7 @@
   	  <td>
   	  	<%= f.radio_button :validity, :false %>
   	  	<%= f.label :validity, "非表示", {value: :false, style: "display: inline-block;"} %>
+        *檀家へ共有したくない場合は、非表示を選択するとカレンダーへ表示されません。
   	  </td>
   	</tr>
   </table>

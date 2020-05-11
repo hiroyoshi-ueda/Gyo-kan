@@ -9,18 +9,12 @@ $(function () {
     function clearCalendar() {
         $('#calendar').html('');
     };
-//初回読み込み、リロード、ページ切り替えで動く。turbolinks回避のため
-// カレンダーの表示オプション
 
+  // カレンダー表示オプション
   console.log('test')
     $('#calendar').fullCalendar({
     // 日本語表記に
     header: {
-		//それぞれの位置に設置するボタンやタイトルをスペース区切りで指定できます。指定しない場合、非表示にできます。
-		// 'title'→月・週・日のそれぞれの表示に応じたタイトル
-		// 'prev'→前へボタン
-		// 'next'→次へボタン
-		// 'today'→当日表示ボタン
 		left: 'today prev', //左側に配置する要素
 		center: 'title', //中央に配置する要素
 		right: 'next' //右側に配置する要素
@@ -32,22 +26,7 @@ $(function () {
 
       timeFormat: 'HH:mm', // 時間表示フォーマット
       timezone: 'Asia/Tokyo', // タイムゾーン設定
-      /* events: [
-    {
-      title  : 'event1',
-      start  : '2020-04-01'
-    },
-    {
-      title  : 'event2',
-      start  : '2020-04-05',
-      end    : '2020-04-05'
-    },
-    {
-      title  : 'event3',
-      start  : '2020-04-09T12:30:00',
-      allDay : false // will make the time show
-    }
-    ]*/
+
 
     //イベントクリック
     eventClick: function(event) {
@@ -56,6 +35,10 @@ $(function () {
     　　　 window.location.href = `/admins/events/${event.id}`;
        }
     },
+
+    eventRender: function (event, element){
+            element.addClass("fc-" + event.validity.replace(/\s+/g, "_"));
+            },
 
 
     // 登録したイベントを表示させる
