@@ -36,9 +36,15 @@ $(function () {
        }
     },
 
-    eventRender: function (event, element){
-            element.addClass("fc-" + event.validity.replace(/\s+/g, "_"));
-            },
+    // 非表示のイベントを指定して色を変える試行錯誤中
+     // eventRender: function (event, element){
+     //  var events = [];
+     //    for(var i=0; i < gon.events.length; i++) {
+     //         if (gon.events[i].validity == false){
+     //          element.addClass("fc-" + event.validity.replace(/\s+/g, "_"));
+     //          }
+     //    }
+     //         },
 
 
     // 登録したイベントを表示させる

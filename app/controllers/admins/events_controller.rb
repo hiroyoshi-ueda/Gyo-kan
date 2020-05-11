@@ -6,7 +6,6 @@ class Admins::EventsController < ApplicationController
   def index
   	@event = Event.new
     @events = current_admin.events.order("start_datetime DESC")
-  	# @events = @admin.events
   end
 
   def edit
@@ -48,6 +47,6 @@ class Admins::EventsController < ApplicationController
   private
 
   def event_params
-  	params.require(:event).permit(:admin_id, :title, :start_datetime, :end_datetime, :time, :introduction, :comment, :image, :validity, :limit_count)
+  	params.require(:event).permit(:admin_id, :title, :start_datetime, :end_datetime,  :introduction, :comment, :image, :validity, :limit_count)
   end
 end
