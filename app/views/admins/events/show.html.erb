@@ -1,5 +1,6 @@
 <div class="event show container">
   <h2>行持情報</h2>
+  <%= render partial: 'layouts/flash', flash: flash %>
     <div class="row">
       <div class='col-xs-4'>
       	<%= attachment_image_tag(@event, :image, :fill, 180, 180, fallback: "no_image.png") %>

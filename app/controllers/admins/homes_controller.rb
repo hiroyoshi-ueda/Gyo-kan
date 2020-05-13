@@ -3,8 +3,45 @@
 class Admins::HomesController < ApplicationController
   before_action :authenticate_admin!
   def top
-  	# JSに受け渡す為
+  	# JSにeventデータを受け渡す為
   	gon.events = current_admin.events
+
+    # カレンダーへのイベント非表示時の対応
+    # データテーブルの並べ替え。日ごとで考える
+     sortdata = current_admin.events.map do |event|
+    # [event[:id],event[:admin_id],event[:title],event[:validity],event[:start_datetime].strftime("%Y%m%d").to_i,event[:end_datetime]]
+    # end.group_by{|i| i[4]}.map{|key,value| value}
+
+    [event[:start_datetime].strftime("%Y%m%d").to_i,event[:start_datetime].strftime("%H%M").to_i,event[:title],event[:validity],event[:end_datetime]]
+    end.group_by{|i| i[0]}.map{|key,value| value}.each{|sort| sort.sort_by!{|x|[x[0],x[1]]}}
+
+    # 配列の生成、初期化
+     array = []
+
+    # 上のデータを並び替え
+    # sortdata.each do |datas|
+    #   datas.each.with_index(1) do |data,ind|
+    #     array.push([ind,data].flatten)
+    #   end
+    # end
+
+    sortdata.each do |datas|
+      count = 1
+      datas.each do |data|
+        array.push([count,data].flatten)
+        count += 1
+      end
+    end
+
+    # unshiftを使って配列の先頭に要素を挿入
+    array.sort!
+    array.length.times do |i|
+      array[i].unshift(i+1)
+    end
+
+    gon.make = array
+
+
   	# 当日分のイベントレコードを取り出す
   	@events = current_admin.events.where(created_at: Time.zone.now.all_day).order("start_datetime")
   end
