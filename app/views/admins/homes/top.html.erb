@@ -20,10 +20,10 @@
     	    	<% end %>
     	    </td>
           <td>
-            <%= event.start_datetime.strftime("%H時%M分") %>
+            <%= event.start_datetime.strftime("%m月%d日%H時%M分") %>
           </td>
           <td>
-            <%= event.end_datetime.strftime("%H時%M分") %>
+            <%= event.end_datetime.strftime("%m月%d日%H時%M分") %>
           </td>
           <td>
             <% if event.validity == true %>表示
