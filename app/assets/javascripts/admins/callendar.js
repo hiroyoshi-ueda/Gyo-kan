@@ -1,11 +1,3 @@
-$(window).ready(function(){
-    var test = $("#calendar .fc-view-container").find(".fc-content");
-    test.each(function(index, element){
-      color_label = gon.make[index][5];
-      $(this).addClass("fc-"+String(color_label));
-    });
-});
-
 $(function () {
 // カレンダーを正しく読み込むための記載。複数表示されないように関数を2つ作成
 　　// 設定を読みこむ
@@ -18,15 +10,25 @@ $(function () {
         $('#calendar').html('');
     };
 
+  // イベント非表示にした際に、色を変える処理を行う為
+  $(window).ready(function(){
+      var test = $("#calendar .fc-view-container").find(".fc-content");
+      test.each(function(index, element){
+        color_label = gon.make[index][5];
+        $(this).addClass("fc-"+String(color_label));
+      });
+  });
+
+
   // カレンダー表示オプション
-  console.log('test')
+  // console.log('test')
     $('#calendar').fullCalendar({
-    // 日本語表記に
     header: {
 		left: 'today prev', //左側に配置する要素
 		center: 'title', //中央に配置する要素
 		right: 'next' //右側に配置する要素
 	  },
+      // 日本語表記に
       monthNames: ['１月','２月','３月','４月','５月','６月','７月','８月','９月','１０月','１１月','１２月'],
       monthNamesShort: ['１月','２月','３月','４月','５月','６月','７月','８月','９月','１０月','１１月','１２月'],
       dayNames: ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'],
@@ -44,7 +46,8 @@ $(function () {
        }
     },
 
-    // 非表示のイベントを指定して色を変える試行錯誤中
+
+    // イベントを指定して色を変える試し。試行錯誤中
     //eventRender: function (event, element){
 
     //gon.events.forEach(e => console.log("hoge",e));

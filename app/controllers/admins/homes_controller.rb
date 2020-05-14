@@ -9,9 +9,6 @@ class Admins::HomesController < ApplicationController
     # カレンダーへのイベント非表示時の対応
     # データテーブルの並べ替え。日ごとで考える
      sortdata = current_admin.events.map do |event|
-    # [event[:id],event[:admin_id],event[:title],event[:validity],event[:start_datetime].strftime("%Y%m%d").to_i,event[:end_datetime]]
-    # end.group_by{|i| i[4]}.map{|key,value| value}
-
     [event[:start_datetime].strftime("%Y%m%d").to_i,event[:start_datetime].strftime("%H%M").to_i,event[:title],event[:validity],event[:end_datetime]]
     end.group_by{|i| i[0]}.map{|key,value| value}.each{|sort| sort.sort_by!{|x|[x[0],x[1]]}}
 
@@ -19,12 +16,6 @@ class Admins::HomesController < ApplicationController
      array = []
 
     # 上のデータを並び替え
-    # sortdata.each do |datas|
-    #   datas.each.with_index(1) do |data,ind|
-    #     array.push([ind,data].flatten)
-    #   end
-    # end
-
     sortdata.each do |datas|
       count = 1
       datas.each do |data|
