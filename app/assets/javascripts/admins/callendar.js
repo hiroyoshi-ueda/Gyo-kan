@@ -1,3 +1,12 @@
+ // イベント非表示にした際に、色を変える処理を行う為
+  $(window).ready(function(){
+      var test = $("#calendar .fc-view-container").find(".fc-content");
+      test.each(function(index, element){
+        color_label = gon.make[index][5];
+        $(this).addClass("fc-"+String(color_label));
+      });
+  });
+
 $(function () {
 // カレンダーを正しく読み込むための記載。複数表示されないように関数を2つ作成
 　　// 設定を読みこむ
@@ -9,15 +18,6 @@ $(function () {
     function clearCalendar() {
         $('#calendar').html('');
     };
-
-  // イベント非表示にした際に、色を変える処理を行う為
-  $(window).ready(function(){
-      var test = $("#calendar .fc-view-container").find(".fc-content");
-      test.each(function(index, element){
-        color_label = gon.make[index][5];
-        $(this).addClass("fc-"+String(color_label));
-      });
-  });
 
 
   // カレンダー表示オプション
@@ -64,7 +64,7 @@ $(function () {
         	// なぜか９時間前で表示されるため、９時間分足すことを記述
         	var starttime = (new Date(gon.events[i].start_datetime)).getTime()+(9*60*60*1000);
           // 日付を跨いだ予定の場合1日短く表示される為、1日長く足すことを記述
-        	var endtime = (new Date(gon.events[i].end_datetime)).getTime()+(24*60*60*1000);
+        	var endtime = (new Date(gon.events[i].end_datetime)).getTime()+(9*60*60*1000);
 //          if(gon.events[i].validity == true ){
             events.push({
               id: gon.events[i].id,
