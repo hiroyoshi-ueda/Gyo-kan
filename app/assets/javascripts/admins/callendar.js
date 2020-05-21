@@ -63,8 +63,7 @@ $(function () {
         for(var i=0; i < gon.events.length; i++) {
         	// なぜか９時間前で表示されるため、９時間分足すことを記述
         	var starttime = (new Date(gon.events[i].start_datetime)).getTime()+(9*60*60*1000);
-          // 日付を跨いだ予定の場合1日短く表示される為、1日長く足すことを記述
-        	var endtime = (new Date(gon.events[i].end_datetime)).getTime()+(9*60*60*1000);
+        	var endtime = (new Date(gon.events[i].end_datetime));
 //          if(gon.events[i].validity == true ){
             events.push({
               id: gon.events[i].id,
