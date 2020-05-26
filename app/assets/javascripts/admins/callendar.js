@@ -1,11 +1,11 @@
- // イベント非表示にした際に、色を変える処理を行う為
-  $(window).ready(function(){
-      var test = $("#calendar .fc-view-container").find(".fc-content");
-      test.each(function(index, element){
-        color_label = gon.make[index][5];
-        $(this).addClass("fc-"+String(color_label));
-      });
-  });
+ // イベント非表示にした際に、色を変える処理を行う為の動作安定しない為、コメントアウト
+  // $(window).ready(function(){
+  //     var test = $("#calendar .fc-view-container").find(".fc-content");
+  //     test.each(function(index, element){
+  //       color_label = gon.make[index][5];
+  //       $(this).addClass("fc-"+String(color_label));
+  //     });
+  // });
 
 $(function () {
 // カレンダーを正しく読み込むための記載。複数表示されないように関数を2つ作成
@@ -47,7 +47,7 @@ $(function () {
     },
 
 
-    // イベントを指定して色を変える試し。試行錯誤中
+    // イベント指定して色を変える試し。試行錯誤中
     //eventRender: function (event, element){
 
     //gon.events.forEach(e => console.log("hoge",e));
@@ -64,13 +64,14 @@ $(function () {
         	// なぜか９時間前で表示されるため、９時間分足すことを記述
         	var starttime = (new Date(gon.events[i].start_datetime)).getTime()+(9*60*60*1000);
         	var endtime = (new Date(gon.events[i].end_datetime));
-//          if(gon.events[i].validity == true ){
+         if(gon.events[i].validity == true ){
             events.push({
               id: gon.events[i].id,
               title: gon.events[i].title,
               start: starttime,
               end: endtime
             });
+          };
         };
         callback(events);
         }
