@@ -33,8 +33,8 @@ class Admins::HomesController < ApplicationController
     # gon.make = array
 
 
-  	# 当日分のイベントレコードを取り出す
-  	@events = current_admin.events.where(created_at: Time.zone.now.all_day).order("start_datetime")
+  	# 当日分のイベントレコードを取り出す orderで開始日時順に並べる
+  	@events = current_admin.events.where(start_datetime: Time.zone.now.all_day).order("start_datetime")
   end
 
   private
