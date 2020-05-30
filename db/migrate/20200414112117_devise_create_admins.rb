@@ -9,7 +9,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
       t.string :post_code, null: false
       t.string :address, null: false
       t.string :tel, null: false
-      t.string :image_id
+      t.string :image_id,default: "", null: false
       t.string :email,              null: false, default: ''
       t.string :encrypted_password, null: false, default: ''
 

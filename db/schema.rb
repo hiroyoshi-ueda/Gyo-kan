@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_205911) do
     t.string "post_code", null: false
     t.string "address", null: false
     t.string "tel", null: false
-    t.string "image_id"
+    t.string "image_id", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2020_04_15_205911) do
     t.string "title", null: false
     t.datetime "start_datetime", null: false
     t.datetime "end_datetime", null: false
-    t.integer "time"
+    t.integer "time", null: false
     t.text "introduction", null: false
-    t.text "comment"
-    t.string "image_id"
+    t.text "comment", default: "", null: false
+    t.string "image_id", default: "", null: false
     t.boolean "validity", default: true, null: false
     t.integer "limit_count"
     t.datetime "created_at", null: false

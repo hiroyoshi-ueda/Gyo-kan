@@ -7,10 +7,10 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :title, null: false
       t.datetime :start_datetime, null: false
       t.datetime :end_datetime, null: false
-      t.integer :time
+      t.integer :time,default: "", null: false
       t.text :introduction, null: false
-      t.text :comment
-      t.string :image_id
+      t.text :comment,default: "", null: false
+      t.string :image_id,default: "", null: false
       t.boolean :validity, null: false, default: true
       t.integer :limit_count
 
