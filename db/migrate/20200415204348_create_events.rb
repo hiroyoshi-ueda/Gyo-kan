@@ -12,7 +12,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.text :comment,default: "", null: false
       t.string :image_id,default: "", null: false
       t.boolean :validity, null: false, default: true
-      t.integer :limit_count
+      t.integer :limit_count,default: "", null: false
 
       t.timestamps
     end

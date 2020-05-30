@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_205911) do
     t.text "comment", default: "", null: false
     t.string "image_id", default: "", null: false
     t.boolean "validity", default: true, null: false
-    t.integer "limit_count"
+    t.integer "limit_count", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
